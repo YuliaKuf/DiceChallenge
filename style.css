@@ -54,7 +54,7 @@ button{
     align-items: center;
 }
 
-img{
+#trophy2, #trophy1{
     width: 10%;
     height: 10%;
     margin-bottom: 5px;
@@ -79,7 +79,7 @@ img{
         border-radius: 10%;
     }
 
-    img{
+    #trophy2, #trophy1{
         width: 2rem;
         height: 2rem;
         margin-bottom: 5px;
