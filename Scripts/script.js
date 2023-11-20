@@ -12,8 +12,8 @@ document.getElementById("letsRollBtn").onclick = function(){
     diceNumberP1 =randomDiceNumber(diceNumberP1);
     diceNumberP2 =randomDiceNumber(diceNumberP2);
 
-    document.getElementById("dicePlayer1").src="images/"+diceNumberP1+".png";
-    document.getElementById("dicePlayer2").src="images/"+diceNumberP2+".png";
+    document.getElementById("dicePlayer1").src="Images/"+diceNumberP1+".png";
+    document.getElementById("dicePlayer2").src="Images/"+diceNumberP2+".png";
 
     if(diceNumberP1 > diceNumberP2){
 
