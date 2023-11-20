@@ -96,6 +96,27 @@ button{
         
     }
 
+    h1{
+        color: #3AA6B9;
+        font-family: 'Rajdhani', sans-serif;
+        font-family: 'Raleway', sans-serif;
+        text-shadow: horizontal-offset vertical-offset blur color;
+        color: rgba(0,0,0,0.6);
+        text-shadow: 2px 8px 6px rgba(0,0,0,0.2),
+                     0px -5px 35px rgba(255,255,255,0.3);
+        font-size: 23px;
+    }
+    h2{
+        color: #3AA6B9;
+        font-family: 'Rajdhani', sans-serif;
+        font-family: 'Raleway', sans-serif;
+        font-size: 15px;
+        text-shadow: horizontal-offset vertical-offset blur color;
+        color: rgba(0,0,0,0.6);
+        text-shadow: 2px 8px 6px rgba(0,0,0,0.2),
+                     0px -5px 35px rgba(255,255,255,0.3);
+    }
+
     body{
 
         height: 80vh;
