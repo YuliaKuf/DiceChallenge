@@ -55,6 +55,12 @@ button{
 }
 
 img{
+    width: 10%;
+    height: 10%;
+    margin-bottom: 5px;
+}
+
+#dicePlayer1 , #dicePlayer2{
     width: 50%;
     height: 50%;
     box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
@@ -66,12 +72,19 @@ img{
     .playerDices{
         flex-direction: column;
     }
-    img{
+    #dicePlayer1 , #dicePlayer2{
         width: 10rem;
         height: 10rem;
         box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
         border-radius: 10%;
     }
+
+    img{
+        width: 2rem;
+        height: 2rem;
+        margin-bottom: 5px;
+    }
+
     body{
 
         height: 80vh;
