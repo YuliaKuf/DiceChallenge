@@ -1,5 +1,5 @@
 // variables:
-const winner = document.getElementById("winner");
+const winnerId = document.getElementById("winner");
 let diceNumberP1 = 0;
 let diceNumberP2 = 0;
 let whoIsPlaying = "";
@@ -7,6 +7,7 @@ let scoreSumP1 = 0;
 let scoreSumP2 = 0;
 let currentScore = 0;
 let diceRollScore = 0;
+let winner = 0;
 
 // buttons querry selectors
 const newgame = document.querySelector(".newgame");
@@ -28,18 +29,20 @@ roll.addEventListener("click", diceRoll);
 hold.addEventListener("click", diceHold);
 
 function resetGame() {
+  winner = 0;
   whoIsPlaying = Math.floor(Math.random() * 2);
   sp1.textContent = "0";
   sp2.textContent = "0";
   scoreSumP2 = 0;
   scoreSumP1 = 0;
   currentScore = 0;
+  current.textContent = currentScore;
   tp2.classList.add("hidden");
   tp1.classList.add("hidden");
+  dice.classList.remove("turn");
   hideUnhide();
 }
 function hideUnhide() {
-  dice.classList.remove("turn");
   document.getElementById("player1cont").classList.remove("turn");
   document.getElementById("player2cont").classList.remove("turn");
   switch (whoIsPlaying) {
@@ -64,56 +67,64 @@ function changeTurn() {
   }
 }
 function thereIsAWinner() {
+  winner = 1;
   switch (whoIsPlaying) {
     case 1: // player 2
-      winner.textContent = "Player 2 Win!";
+      winnerId.textContent = "Player 2 Win!";
       tp2.classList.remove("hidden");
       break;
     case 0: //player 1
-      winner.textContent = "Player 1 Win!";
+      winnerId.textContent = "Player 1 Win!";
       tp1.classList.remove("hidden");
       break;
   }
 }
+function currentScoreupdate() {
+  if (diceRollScore === 1) {
+    changeTurn();
+    currentScore = 0;
+  } else {
+    currentScore = currentScore + diceRollScore;
+  }
+  current.textContent = currentScore;
+}
 // btn Roll Handler
 function diceRoll() {
-  diceRollScore = Math.ceil(Math.random() * 6);
-  function currentScoreupdate() {
-    if (diceRollScore === 1) {
-      changeTurn();
-      currentScore = 0;
-    } else {
-      currentScore = currentScore + diceRollScore;
+  if (winner) {
+    resetGame();
+  } else {
+    diceRollScore = Math.ceil(Math.random() * 6);
+    switch (whoIsPlaying) {
+      case 1: // player 2
+        diceimg.src = "Images/" + diceRollScore + ".png";
+        currentScoreupdate();
+        break;
+      case 0: //player 1
+        diceimg.src = "Images/" + diceRollScore + ".png";
+        currentScoreupdate();
+        break;
     }
-    current.textContent = currentScore;
-  }
-
-  switch (whoIsPlaying) {
-    case 1: // player 2
-      diceimg.src = "Images/" + diceRollScore + ".png";
-      currentScoreupdate();
-      break;
-    case 0: //player 1
-      diceimg.src = "Images/" + diceRollScore + ".png";
-      currentScoreupdate();
-      break;
   }
 }
 // btn Hold Handler
 function diceHold() {
-  if (whoIsPlaying) {
-    scoreSumP2 = scoreSumP2 + currentScore;
-    sp2.textContent = scoreSumP2;
+  if (winner) {
+    resetGame();
   } else {
-    scoreSumP1 = scoreSumP1 + currentScore;
-    sp1.textContent = scoreSumP1;
-  }
-  currentScore = 0;
-  current.textContent = currentScore;
-  if (scoreSumP2 >= 50 || scoreSumP1 >= 50) {
-    thereIsAWinner();
-  } else {
-    hideUnhide();
-    changeTurn();
+    if (whoIsPlaying) {
+      scoreSumP2 = scoreSumP2 + currentScore;
+      sp2.textContent = scoreSumP2;
+    } else {
+      scoreSumP1 = scoreSumP1 + currentScore;
+      sp1.textContent = scoreSumP1;
+    }
+    currentScore = 0;
+    current.textContent = currentScore;
+    if (scoreSumP2 >= 50 || scoreSumP1 >= 50) {
+      thereIsAWinner();
+    } else {
+      hideUnhide();
+      changeTurn();
+    }
   }
 }
