@@ -1,40 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Dice Game</title>
-    <link rel="stylesheet" href="Stylesheets//style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&family=Raleway:wght@300;400&display=swap" rel="stylesheet">
-</head>
-<body>
+    <link rel="stylesheet" href="Stylesheets//style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&family=Raleway:wght@300;400&display=swap"
+      rel="stylesheet" />
+  </head>
+  <body>
+    <!-- header -->
+    <h1 id="winner" class="title h1">Pig Game 🐷</h1>
+    <button type="button" class="btn newgame">New Game</button>
 
-    
-        <div class="rollTheDice">
-        <h1 id ="winner">Roll The Dice To Win!</h1>
-        <button type="button" id="letsRollBtn">Lets Roll</button>
-        </div>
+    <!-- game container -->
 
-        <div class="playerDices">
+  <div class="game">
+    <div class="playerDices">
+  <!-- P1 -->
+      <div id="player1cont" class="player container">
+        <h2 class="title ">Player 1</h2>
+        <h2 class="title h2 ">Total: <mark class="score sp1">0</mark></h2>
+        <img id="trophy1" class="trophy tp1 hidden" src="Images/trophy.png" />
 
-            <div class="player1Container">
-               <h2>Player 1</h2>
-               <img id="trophy1" src="Images/trophy.png">
-               <img id="dicePlayer1" src="Images/0.png">
-               
-            </div>
+      </div>
+   <!-- DICE -->
+      <div class="dice container turn">
+        <h2 class="title playersturn">Roll the dice</h2>
+        <img id="dice" class="diceimg" src="Images/1.png" />
+        <h2 class="title h2">Current Score: <mark class="score current">0</mark><h2>
+          <div class="rollTheDice">
+            <button type="button" id="letsRollBtn" class="btn roll">Roll</button>
+            <button type="button" class="btn hold">Hold</button>
+          </div>
+      </div>
+   <!-- P2 -->
+      <div id="player2cont" class="player container">
+        <h2 class="title ">Player 2</h2>
+        <h2 class="title h2 ">Total: <mark class="score sp2">0</mark><h2>
+        <img id="trophy2" class="trophy tp2 hidden" src="Images/trophy.png" />
+      </div>
+    </div>
 
-            <div class="player2Container">
-                <h2>Player 2</h2>
-                <img id="trophy2" src="Images/trophy.png">
-                <img id="dicePlayer2" src="Images/0.png">
-            </div>
+  </div>
 
-        </div>
-
-        <script src="Scripts/index.js"></script>
-</body>
+    <script src="Scripts/index.js"></script>
+  </body>
 </html>
 <!-- https://colorhunt.co/palette/3aa6b9ffd0d0ff9eaac1ece4 -->

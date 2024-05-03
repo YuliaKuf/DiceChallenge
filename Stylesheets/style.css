@@ -1,125 +1,161 @@
-
-body{
-    background-color: #C1ECE4;
-    display:flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 70vh;
-    
+body {
+  background-color: #c1ece4;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0%;
+  margin: 0%;
+  height: 100vh;
 }
 
-h1, h2{
-    color: #3AA6B9;
-    font-family: 'Rajdhani', sans-serif;
-    font-family: 'Raleway', sans-serif;
-    text-shadow: horizontal-offset vertical-offset blur color;
-    color: rgba(0,0,0,0.6);
-    text-shadow: 2px 8px 6px rgba(0,0,0,0.2),
-                 0px -5px 35px rgba(255,255,255,0.3);
+.game {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 50vh;
+  background-color: #3ab9a861;
+  width: 100%;
 }
 
-
-button{
-    border: none;
-    background-color: #FFD0D0;
-    font-family: 'Rajdhani', sans-serif;
-    font-family: 'Raleway', sans-serif;
-    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
-    height: 2rem;
-    border-radius: 5px;
-    color:rgba(0,0,0,0.6);
-    font-weight: 700;
+.title {
+  font-family: "Rajdhani", sans-serif;
+  font-family: "Raleway", sans-serif;
+  text-shadow: horizontal-offset vertical-offset blur color;
+  color: rgba(0, 0, 0, 0.6);
+  text-shadow: 2px 8px 6px rgba(0, 0, 0, 0.2),
+    0px -5px 35px rgba(255, 255, 255, 0.3);
+}
+.turn {
+  padding: 10px;
+  border-radius: 10px;
+  background: rgb(208 247 255 / 29%);
+}
+.score {
+  background-color: transparent;
+  font-family: "Rajdhani", sans-serif;
+  font-family: "Raleway", sans-serif;
+  text-shadow: horizontal-offset vertical-offset blur color;
+  color: rgba(0, 0, 0, 0.6);
+  text-shadow: 2px 8px 6px rgba(0, 0, 0, 0.2),
+    0px -5px 35px rgba(255, 255, 255, 0.3);
+}
+.btn {
+  border: none;
+  background-color: #ffd0d0;
+  font-family: "Rajdhani", sans-serif;
+  font-family: "Raleway", sans-serif;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  height: 2rem;
+  border-radius: 5px;
+  color: rgba(0, 0, 0, 0.6);
+  font-weight: 700;
+  width: 6rem;
+  margin: 0.5rem;
 }
 
-#letsRollBtn:hover {
-    cursor: pointer;
+.btn:hover {
+  cursor: pointer;
 }
 
-.rollTheDice{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding-bottom: 2rem;
-    
+.rollTheDice {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 
-.playerDices{
-    display:flex;
-    justify-content: center;
-    align-items: center;
+.playerDices {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0px;
+  margin: 0px;
+}
+.dice {
+  padding: 0px;
+  margin: 0px;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0px;
+}
+.player {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  width: 100%;
 }
 
-.player1Container, .player2Container{
-    display:flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+.trophy {
+  width: 10rem;
+  height: 10rem;
 }
 
-#trophy2, #trophy1{
-    width: 10%;
-    height: 10%;
-    margin-bottom: 5px;
-    visibility: hidden;
+.hidden {
+  visibility: hidden;
 }
 
-#dicePlayer1 , #dicePlayer2{
-    width: 50%;
-    height: 50%;
-    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
-    border-radius: 10%;
+.diceimg {
+  width: 50%;
+  height: 50%;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  border-radius: 10%;
 }
 
 @media only screen and (max-width: 600px) {
-    /* Your styles for phone-sized screens or smaller go here */
-    .playerDices{
-        flex-direction: column;
-    }
-    #dicePlayer1 , #dicePlayer2{
-        width: 10rem;
-        height: 10rem;
-        box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
-        border-radius: 10%;
-    }
+  /* Your styles for phone-sized screens or smaller go here */
+  body {
+    display: flex;
+    height: 100vh;
+  }
+  .game {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    background-color: #3ab9a861;
+    width: 100%;
+    height: 40%;
+  }
 
-    #trophy2, #trophy1{
-        width: 2rem;
-        height: 2rem;
-        margin-bottom: 5px;
-    }
-    .rollTheDice{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        padding-bottom: 0px;
-        
-    }
+  .player {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100px;
+  }
 
-    h1{
-        color: #3AA6B9;
-        font-family: 'Rajdhani', sans-serif;
-        font-family: 'Raleway', sans-serif;
-        text-shadow: horizontal-offset vertical-offset blur color;
-        color: rgba(0,0,0,0.6);
-        text-shadow: 2px 8px 6px rgba(0,0,0,0.2),
-                     0px -5px 35px rgba(255,255,255,0.3);
-        font-size: 23px;
-    }
-    h2{
-        color: #3AA6B9;
-        font-family: 'Rajdhani', sans-serif;
-        font-family: 'Raleway', sans-serif;
-        font-size: 15px;
-        text-shadow: horizontal-offset vertical-offset blur color;
-        color: rgba(0,0,0,0.6);
-        text-shadow: 2px 8px 6px rgba(0,0,0,0.2),
-                     0px -5px 35px rgba(255,255,255,0.3);
-    }
+  #dice {
+    width: 5rem;
+    height: 5rem;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    border-radius: 10%;
+  }
 
-    body{
+  .turn {
+    padding: 0;
+    border-radius: 5px;
+    background: rgb(208 247 255 / 29%);
+  }
 
-        height: 80vh;
-        
-    }
+  .trophy {
+    width: 2rem;
+    height: 2rem;
+  }
+  .rollTheDice {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 0px;
+  }
+  .title {
+    font-family: "Rajdhani", sans-serif;
+    font-family: "Raleway", sans-serif;
+    text-shadow: horizontal-offset vertical-offset blur color;
+    color: rgba(0, 0, 0, 0.6);
+    text-shadow: 2px 8px 6px rgba(0, 0, 0, 0.2),
+      0px -5px 35px rgba(255, 255, 255, 0.3);
+    font-size: small;
+  }
 }
