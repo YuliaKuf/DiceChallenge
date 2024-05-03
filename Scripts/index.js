@@ -1,5 +1,7 @@
 // variables:
+
 const winner = document.getElementById("winner");
+
 let diceNumberP1 = 0;
 let diceNumberP2 = 0;
 let whoIsPlaying = "";
@@ -29,6 +31,7 @@ hold.addEventListener("click", diceHold);
 
 function resetGame() {
   winner.textContent = "Pig Game 🐷";
+
   whoIsPlaying = Math.floor(Math.random() * 2);
   sp1.textContent = "0";
   sp2.textContent = "0";
@@ -78,6 +81,9 @@ function thereIsAWinner() {
 }
 // btn Roll Handler
 function diceRoll() {
+  if (scoreSumP2 >= 50 || scoreSumP1 >= 50) {
+    resetGame();
+  }
   diceRollScore = Math.ceil(Math.random() * 6);
   function currentScoreupdate() {
     if (diceRollScore === 1) {
@@ -102,6 +108,9 @@ function diceRoll() {
 }
 // btn Hold Handler
 function diceHold() {
+  if (scoreSumP2 >= 50 || scoreSumP1 >= 50) {
+    resetGame();
+  }
   if (whoIsPlaying) {
     scoreSumP2 = scoreSumP2 + currentScore;
     sp2.textContent = scoreSumP2;
